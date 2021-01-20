@@ -1,0 +1,11 @@
+version: "3"
+
+services:
+  3v1l_1n5ul7:
+    build: .
+    container_name: "3v1l_1n5ul7"
+    env_file:
+      - .env
+    ports:
+      - "10001:8080"
+    restart: "always"

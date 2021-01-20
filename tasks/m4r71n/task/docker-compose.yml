@@ -1,0 +1,11 @@
+version: "3"
+
+services:
+  m4r71n:
+    build: .
+    container_name: "m4r71n"
+    env_file:
+      - .env
+    ports:
+      - "10002:8080"
+    restart: "always"

@@ -1,0 +1,9 @@
+version: '3'
+
+services:
+  w1k1:
+    build: .
+    container_name: "w1k1"
+    restart: always
+    ports:
+      - "10004:3000"
