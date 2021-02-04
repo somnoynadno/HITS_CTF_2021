@@ -19,7 +19,7 @@ def start_bot(headless=False):
 
 	logging.info("[bot] starting...")
 
-	driver = webdriver.Firefox(options=options)
+	driver = webdriver.Firefox(executable_path="./geckodriver", options=options)
 	driver.get(r"http://localhost:8000/admin/login")
 	_await(driver, 3)
 

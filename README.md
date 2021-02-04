@@ -2,4 +2,4 @@
 
 Main competition repository.
 
-User ```start.sh``` and ```stop.sh``` to deployment.
+Use ```start.sh``` and ```stop.sh``` to manage deployment.

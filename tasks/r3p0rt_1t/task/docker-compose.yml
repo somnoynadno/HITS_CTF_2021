@@ -5,9 +5,9 @@ services:
     build: .
     container_name: "r3p0rt_1t"
     environment:
-      REDIS_HOST: redis
+      REDIS_HOST: r3d15
     ports:
-      - "10005:8080"
+      - "10005:8000"
     restart: "always"
     healthcheck:
       test: curl --fail -s -X GET http://localhost:8000/secret_endpoint/start_admin_bot || exit 1
@@ -23,7 +23,7 @@ services:
     image: redis:latest
     container_name: r3d15
     command: ["redis-server", "--appendonly", "yes"]
-    hostname: redis
+    hostname: r3d15
     restart: always
     networks:
       - redis_internal

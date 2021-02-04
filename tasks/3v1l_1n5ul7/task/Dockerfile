@@ -6,8 +6,8 @@ RUN mkdir /secret
 RUN chmod 777 /secret
 
 RUN mkdir /app
-ADD .. /app/
 WORKDIR /app
+ADD . /app/
 
 RUN go build -o main .
 CMD ["/app/main"]
