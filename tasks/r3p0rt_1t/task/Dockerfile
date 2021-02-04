@@ -1,4 +1,4 @@
-FROM python:3.8
+FROM ubuntu:latest
 LABEL maintainer="Alexander Zorkin"
 
 # ENV ENV PRODUCTION
@@ -6,8 +6,11 @@ ENV PYTHONUNBUFFERED 1
 
 WORKDIR /app/src
 
+RUN apt-get update && apt-get install -y firefox python3 curl
+RUN apt-get install -y python3-pip
+
 COPY src/requirements.txt ./
-RUN pip install -r requirements.txt
+RUN pip3 install -r requirements.txt
 
 COPY src /app/src
 

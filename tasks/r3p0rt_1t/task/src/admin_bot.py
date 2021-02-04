@@ -55,4 +55,4 @@ def start_bot(headless=False):
 
 
 if __name__ == "__main__":
-	start_bot()
+	start_bot(True)

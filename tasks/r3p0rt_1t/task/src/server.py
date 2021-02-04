@@ -9,7 +9,8 @@ from admin_bot import start_bot
 from helpers import zashita_ot_dolboyobov
 
 
-logging.basicConfig(level=logging.INFO if os.getenv("ENV") == "PRODUCTION" else logging.DEBUG)
+logging.basicConfig(level=logging.INFO if os.getenv("ENV") == "PRODUCTION" else logging.DEBUG,
+        format='[%(asctime)s] [%(name)s] [%(levelname)s]: %(message)s', datefmt='%d-%b-%y %H:%M:%S')
 
 r = redis.StrictRedis(host=os.environ.get("REDIS_HOST", "localhost"), 
     port=int(os.environ.get("REDIS_PORT", "6379")), db=0)
