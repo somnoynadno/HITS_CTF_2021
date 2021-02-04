@@ -1,0 +1,35 @@
+version: "3"
+
+services:
+  r3p0rt_1t:
+    build: .
+    container_name: "r3p0rt_1t"
+    environment:
+      REDIS_HOST: redis
+    ports:
+      - "10005:8080"
+    restart: "always"
+    healthcheck:
+      test: curl --fail -s -X GET http://localhost:8000/secret_endpoint/start_admin_bot || exit 1
+      interval: 3m
+      timeout: 120s
+      retries: 1
+    networks:
+      - default
+      - redis_internal
+
+
+  r3d15:
+    image: redis:latest
+    container_name: r3d15
+    command: ["redis-server", "--appendonly", "yes"]
+    hostname: redis
+    restart: always
+    networks:
+      - redis_internal
+
+
+networks:
+  default:
+  redis_internal:
+    internal: true
