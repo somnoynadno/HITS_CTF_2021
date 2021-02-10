@@ -1,0 +1,11 @@
+version: "3"
+
+services:
+  p1ckl3:
+    build: .
+    container_name: "p1ckl3"
+    environment:
+      FLAG: HITS{1_w15h_1_w45_4_cucumb3r}
+    ports:
+      - "10006:8000"
+    restart: "always"
