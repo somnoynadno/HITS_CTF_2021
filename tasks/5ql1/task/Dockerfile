@@ -1,6 +1,5 @@
-FROM php:7.4-fpm
-
-RUN apt update && apt install php7.3-mysql 
+FROM php:7
+RUN docker-php-ext-install mysqli
 
 WORKDIR /app
 COPY . /app
