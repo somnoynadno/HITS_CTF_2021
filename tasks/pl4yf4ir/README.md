@@ -1,4 +1,4 @@
-# 4dm1n
+# Easy cryprto
 
 ## Legend
 
