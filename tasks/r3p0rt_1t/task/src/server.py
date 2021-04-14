@@ -3,7 +3,7 @@ import os
 import redis
 import uuid
 
-from flask import Flask, abort, jsonify, request, render_template, make_response, redirect
+from flask import Flask, Response, abort, jsonify, request, render_template, make_response, redirect
 
 from admin_bot import start_bot
 from helpers import zashita_ot_dolboyobov
@@ -16,6 +16,21 @@ r = redis.StrictRedis(host=os.environ.get("REDIS_HOST", "localhost"),
     port=int(os.environ.get("REDIS_PORT", "6379")), db=0)
 
 app = Flask(__name__)
+
+
+@app.route('/robots.txt', methods=['GET'])
+def handle_robots():
+	text = """
+User-agent: *
+Allow: /
+Disallow: /no_bots_allowed/flag.txt
+	""".strip()
+	return Response(text, mimetype='text/plain')
+
+
+@app.route('/no_bots_allowed/flag.txt', methods=['GET'])
+def handle_no_bots_flag():
+	return r"Good job! <br><br> HITS{p4r53rb0t_l3ft_th3_ch4t}"
 
 
 @app.route('/', methods=['GET', 'POST'])

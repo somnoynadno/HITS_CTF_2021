@@ -16,6 +16,16 @@ Great service: and you can complain about life, and the flag is in the most visi
 
 Look in the admin panel.
 
+### Bip Bup Bip
+
+#### RU
+
+Когда разработчик запрещает индексирование страниц, в мире плачет один поисковый робот.
+
+#### EN
+
+When a developer prohibits web-pages indexing, one search-robot in the world cries.
+
 ### 0n3 0f u5
 
 #### RU
@@ -46,17 +56,23 @@ A small service for sending complaints and problems.
 
 Has a vulnerability to XSS and an injection in Redis.
 
+Two first flags are very easy to discover.
+
 ## Solutions
 
 1. ```rick_sploit.py```
 
-2. ```xss_sploit.py```
+2. Just view robots.txt file.
 
-3. ```redis_sploit.py```
+3. ```xss_sploit.py```
+
+4. ```redis_sploit.py```
 
 ## Flags
 
 **HITS{n3v3r_g0nn4_g1v3_y0u_up_l0l}**
+
+**HITS{p4r53rb0t_l3ft_th3_ch4t}**
 
 **HITS{p0w3r_0f_X55}**
 
