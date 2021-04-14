@@ -1,4 +1,4 @@
-# Easy cryprto
+# Easy crypto
 
 ## Legend
 
