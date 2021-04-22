@@ -16,6 +16,8 @@ Simple reverse task.
 
 ## Solution
 
+.pyc file can be easily uncompiled with uncompile6 util. After that you can view source code of this script.
+
 The only function of the dropper is to download and run the file from a remote server.
 
 The downloaded file performs the usual XOR operation between the flag and the random gamma, thereby encrypting it, and displays the flag on the screen.
@@ -28,4 +30,4 @@ You just need to track between which bytes XOR occurs, or just get the flag from
 
 ## Handout
 
-```task/dropper.exe```
+```task/dropper.pyc```
