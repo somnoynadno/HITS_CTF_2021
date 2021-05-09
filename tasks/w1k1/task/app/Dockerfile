@@ -4,6 +4,8 @@ MAINTAINER "Alexander Zorkin"
 WORKDIR /app
 COPY . ./
 
+RUN apk add curl
+
 RUN npm install wikit -g
 RUN npm install --production
 
