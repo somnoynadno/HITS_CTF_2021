@@ -122,7 +122,7 @@ func handleConnection(conn net.Conn) {
 }
 
 func main() {
-	ln, err := net.Listen("tcp", "127.0.0.1:8080")
+	ln, err := net.Listen("tcp", "0.0.0.0:8080")
 	if err != nil {
 		panic(err)
 	}
