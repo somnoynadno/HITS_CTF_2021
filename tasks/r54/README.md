@@ -26,6 +26,8 @@ Just because number of messages is equal to public exponent and this number is v
 
 Implementation: ```solver.py```
 
+UPD: yeah, I deliberately used prime modulus for all messages just to make sure that they'll not be broken by factordb.com.
+
 ## Flag
 
 **HITS{l0r3m_1psum_d0l0r_51t_4m3t_c0n53ct3tur_4d1p15c1ng_3l1t}**

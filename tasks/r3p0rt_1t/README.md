@@ -2,7 +2,7 @@
 
 ## Legend
 
-### R1ck R0ll3d
+### Rock R1ll3d
 
 #### RU
 

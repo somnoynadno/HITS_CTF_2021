@@ -12,7 +12,7 @@
 
 Admin is who (кто?)
 
-### So Smart Template Invention
+### ```5**1```
 
 #### RUS
 
@@ -24,7 +24,7 @@ Admin is who (кто?)
 
 Exploitation is as simple as 2×2
 
-*Flag is written in app.config["SECRET_KEY"]*.
+*Flag is written in app.config["SECRET_KEY"]*
 
 ## Description
 

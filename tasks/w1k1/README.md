@@ -14,7 +14,7 @@
 
 The real project of our fourth-year student.
 
-*Flat is in the application directory.*
+*Flag is in the application directory.*
 
 ### 4m0gu5
 
