@@ -4,6 +4,7 @@ import (
 	"bufio"
 	"errors"
 	"fmt"
+	"log"
 	"math/rand"
 	"net"
 	"os"
@@ -12,7 +13,7 @@ import (
 	"time"
 )
 
-var DELAY = 900 * time.Millisecond
+var DELAY = 700 * time.Millisecond
 var FLAG = os.Getenv("FLAG")
 
 var RED = []string{"1", "3", "5", "7", "9", "12", "14", "16", "18", "19", "21", "23", "25", "27", "30", "32", "34", "36"}
@@ -29,10 +30,6 @@ func doBet(conn net.Conn, scanner *bufio.Scanner, money *int, pull []string) err
 		return errors.New("Is your number valid integer?..")
 	}
 
-	if amount < 0 {
-		return errors.New("Do not cheat on me!")
-	}
-
 	if amount > *money {
 		return errors.New("You don't have enough money!")
 	}
@@ -40,14 +37,14 @@ func doBet(conn net.Conn, scanner *bufio.Scanner, money *int, pull []string) err
 	*money -= amount
 	printSpinMessage(conn)
 
-	r := rand.Intn(36) + 1
+	r := rand.Intn(37)
 	res := strconv.Itoa(r)
 	_, _ = conn.Write([]byte("It's " + res + "!\n"))
 
 	if stringInSlice(res, pull) {
 		prize := amount
 		if len(pull) == 1 {
-			prize *= 5
+			prize *= 10
 		} else {
 			prize *= 2
 		}
@@ -107,7 +104,7 @@ func handleConnection(conn net.Conn) {
 			return
 		}
 
-		if money >= 1000 {
+		if money >= 1000000 {
 			_, _ = conn.Write([]byte(VICTORY + "\n"))
 			_, _ = conn.Write([]byte(FLAG + "\n"))
 			return
@@ -135,6 +132,7 @@ func main() {
 		}
 		_ = conn.SetDeadline(time.Time{})
 
+		log.Println(conn.RemoteAddr())
 		go handleConnection(conn)
 	}
 }

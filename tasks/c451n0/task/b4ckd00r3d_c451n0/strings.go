@@ -18,7 +18,7 @@ var HELP = "Rules are simple:\n" +
 	"- type number from 0 to 36 to place on it\n" +
 	"- type 'status' to show your current capital\n" +
 	"- type 'exit' quit this game\n\n" +
-	"Getting 1000$ makes you a winner.\n"
+	"Getting 1000000$ makes you a winner.\n"
 
 var GOODBYE = "See ya!\n"
 

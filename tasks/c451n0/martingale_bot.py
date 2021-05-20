@@ -5,7 +5,7 @@ import socket
 from time import sleep
 
 def skip(sock):
-	data = sock.recv(2048).decode()
+	data = sock.recv(1024).decode()
 
 	if "HITS" in data:
 		print(data)
@@ -26,14 +26,14 @@ def main():
     step = 6
     amount = step
     while True:
-        sock.send(b"red\n")
+        sock.send(b"black\n")
         skip(sock)
 
         sock.send((str(amount) + "\n").encode('utf-8'))
         for i in range(5):
             skip(sock)
 
-        data = sock.recv(2048).decode()
+        data = sock.recv(1024).decode()
         print(data)
 
         if "money" in data:
@@ -50,7 +50,7 @@ def main():
         sock.send(b"status\n")
 
         sleep(0.2)
-        data = sock.recv(2048).decode()
+        data = sock.recv(1024).decode()
         print("MONEY: " + data)
 
         money = int(data.split('$')[0])
@@ -58,7 +58,11 @@ def main():
             break
 
         if amount == step:
-            step = int(money / 16)
+            if money < 1000:
+                step = int(money / 16)
+            else:
+                step = int(money / 24)
+
             amount = step
 
         sleep(0.5)
