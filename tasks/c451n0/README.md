@@ -56,7 +56,7 @@ Seed for each sesson is a unix timestamp in seconds.
 So, at first we need to guess that exact timestamp and then 
 generate the same (pseudo)random sequence using rand() function from ```main.go```.
 
-Sorry, I have no exploit for that, but it must be pretty simple to implement.
+Solver for this verstion: ```./solver.go```.
 
 ## Flags
 
